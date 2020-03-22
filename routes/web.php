@@ -11,6 +11,5 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','KostController@index');
+Route::get('/user','weightProductController@show');
