@@ -26,8 +26,7 @@ class kostsTableSeeder extends Seeder
                 "tipe" => $obj->tipe,
                 "id_fasilitas_kamar" => intval($obj->id_fasilitas_kamar),
                 "id_fasilitas_penunjang" => intval($obj->id_fasilitas_penunjang),
-                "id_fasilitas_lingkungan" => intval($obj->id_fasilitas_lingkungan),
-                "created_at" => date("Y-m-d H:i:s")
+                "id_fasilitas_lingkungan" => intval($obj->id_fasilitas_lingkungan)
             ]);
         }
     }

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateDssFasilitasPenunjangsTable extends Migration
 {
@@ -14,10 +15,13 @@ class CreateDssFasilitasPenunjangsTable extends Migration
     public function up()
     {
         Schema::create('dss_fasilitas_penunjangs', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->string('nama');
             $table->float('nilai');
-            $table->timestamps();
+            
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+
             $table->softDeletes();
         });
     }

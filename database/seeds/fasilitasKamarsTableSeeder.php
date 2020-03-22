@@ -23,8 +23,7 @@ class fasilitasKamarsTableSeeder extends Seeder
         foreach ($fuzzyNumberKamar as $key => $value) {
             DB::table('dss_fasilitas_kamars')->insert([
                 "nama" => $value,
-                "nilai" => floatval($key),
-                "created_at" => date("Y-m-d H:i:s")
+                "nilai" => floatval($key)
             ]);
         }
     }

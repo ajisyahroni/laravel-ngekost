@@ -22,8 +22,7 @@ class fasilitasPenunjangsTableSeeder extends Seeder
         foreach ($fuzzyNumberLingkungan as $key => $value) {
             DB::table('dss_fasilitas_penunjangs')->insert([
                 "nama" => $value,
-                "nilai" => floatval($key),
-                "created_at" => date("Y-m-d H:i:s")
+                "nilai" => floatval($key)
             ]);
         }
     }

@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
 
 class CreateDssKostsTable extends Migration
 {
@@ -21,10 +22,14 @@ class CreateDssKostsTable extends Migration
             $table->integer('luas_kamar');
             $table->string('foto');
             $table->string('tipe');
-            $table->integer('id_fasilitas_kamar');
-            $table->integer('id_fasilitas_penunjang');
-            $table->integer('id_fasilitas_lingkungan');
-            $table->timestamps();
+            $table->unsignedInteger('id_fasilitas_kamar')->index('fk_fasilitas_kamar');
+            $table->unsignedInteger('id_fasilitas_penunjang')->index('fk_fasilitas_penunjang');
+            $table->unsignedInteger('id_fasilitas_lingkungan')->index('fk_fasilitas_lingkungan');
+
+
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+
             $table->softDeletes();
         });
     }
