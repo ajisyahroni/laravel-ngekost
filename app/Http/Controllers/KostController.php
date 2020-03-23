@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\DssKost;
+use App\DssFasilitasKamar;
+
 
 class KostController extends Controller
 {
@@ -12,11 +14,29 @@ class KostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function dashboard(){
+        return view('admin/dashboard');
+    }
+
+    public function showallAlternatif()
+    {
+        $data_kost = DssKost::get();
+        $data_fasilitasKamar = DssFasilitasKamar::get();
+        return view('admin/alternatif_kost', ['data_kosts' => $data_kost, 'data_fk' => $data_fasilitasKamar]);
+    }
+
+    public function tambah()
+    {
+        return 'berhasil ditambah';
+    }
+
     public function index()
     {
         $data_kost = DssKost::get();
         return view('kost', ['kost' => $data_kost]);
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -58,7 +78,9 @@ class KostController extends Controller
      */
     public function edit($id)
     {
-        //
+        $data_kost = DssKost::get($id);
+        dd($data_kost);
+
     }
 
     /**
