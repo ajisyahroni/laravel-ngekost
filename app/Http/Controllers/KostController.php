@@ -14,7 +14,13 @@ class KostController extends Controller
      */
     public function index()
     {
-        $data_kost = DssKost::get();
+        $data_kost = DssKost::with('fasilitasKamar')
+            ->with('fasilitasPenunjang')
+            ->with('fasilitasLingkungan')
+            ->get();
+
+
+        // return response()->json(['status' => 200, 'data' => $data_kost]);
         return view('kost', ['kost' => $data_kost]);
     }
 
