@@ -20,8 +20,8 @@ class KostController extends Controller
             ->get();
 
 
-        // return response()->json(['status' => 200, 'data' => $data_kost]);
-        return view('kost', ['kost' => $data_kost]);
+        return response()->json(['status' => 200, 'data' => $data_kost]);
+        // return view('kost', ['kost' => $data_kost]);
     }
 
     /**
