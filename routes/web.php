@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/','KostController@index');
+Route::get('/','weightProductController@index');
 Route::get('/user','weightProductController@show');

@@ -18,11 +18,9 @@ class KostController extends Controller
             ->with('fasilitasPenunjang')
             ->with('fasilitasLingkungan')
             ->get();
-
-
-        // return response()->json(['status' => 200, 'data' => $data_kost]);
-        return view('kost', ['kost' => $data_kost]);
     }
+
+
 
     /**
      * Show the form for creating a new resource.

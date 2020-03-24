@@ -17,6 +17,7 @@ class DssKost extends Model
         'id_fasilitas_penunjang',
         'id_fasilitas_lingkungan'
     ];
+    protected $hidden = ['created_at', 'updated_at', 'deleted_at'];
 
     public function fasilitasKamar()
     {
