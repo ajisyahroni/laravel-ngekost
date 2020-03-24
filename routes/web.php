@@ -13,8 +13,13 @@
 
 Route::get('/', 'KostController@dashboard');
 Route::get('/alternatif_kost', 'KostController@showallAlternatif');
-Route::post('/alternatif_kost/tambah', 'KostController@tambah');
+
+Route::post('/alternatif_kost/store', 'KostController@store');
+Route::post("/alternatif_kost/update/{id}",'Kostcontroller@update');
+
 Route::get('/alternatif_kost/edit/{id}', 'KostController@edit');
+Route::get('/alternatif_kost/hapus/{id}', 'KostController@hapus');
+
 Route::get('/profil', 'AdminController@profil');
 
 Route::get('/index','KostController@index');

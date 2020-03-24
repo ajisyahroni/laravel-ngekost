@@ -13,11 +13,12 @@
     <div class="row">
         @foreach($kost as $key => $value)
         <div class="col-md-3 mt-4">
-            <div class="card" >
-                <img src="{{ $value->foto }}" class="card-img-top" alt="Card">
+            <div class="card">
+                <img src="{{ $value->foto }}" height="200" class="card-img-top" alt="Card">
                 <div class="card-body">
                     <h5 class="card-title">{{ $value->nama }}</h5>
                     <p class="card-text">Rp. {{ $value->harga }}.000</p>
+                    <button class="btn btn-info btn-small">Lihat</button>
                 </div>
 
             </div>
