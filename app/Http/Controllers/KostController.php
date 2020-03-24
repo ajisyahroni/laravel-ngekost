@@ -7,6 +7,17 @@ use App\DssKost;
 
 class KostController extends Controller
 {
+    public function detailKost(Request $request, $id)
+    {
+
+        $detail_kost = DssKost::where('id', $id)
+            ->with('fasilitasKamar')
+            ->with('fasilitasPenunjang')
+            ->with('fasilitasLingkungan')
+            ->first();
+
+        return view('detail', ['detail_kost' => $detail_kost]);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -18,6 +29,8 @@ class KostController extends Controller
             ->with('fasilitasPenunjang')
             ->with('fasilitasLingkungan')
             ->get();
+
+        return view('kost', ['kost' => $data_kost]);
     }
 
 

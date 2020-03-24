@@ -19,7 +19,8 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $value['nama'] }}</h5>
                     <p class="card-text">Rp. {{ $value['harga'] }}.000</p>
-                    <button class="btn btn-info btn-small">Lihat</button>
+
+                    <a href="/detail/{{$value['id']}}" class="btn btn-info btn-small">Lihat</a>
                 </div>
 
             </div>
