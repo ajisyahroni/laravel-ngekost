@@ -28,4 +28,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
 
 
 Route::get('/index', 'KostController@index');
+
+Route::get('/', 'KostController@index');
 Route::get('/user', 'weightProductController@show');
+
+
+Route::get('/rekomend', 'weightProductController@index');
+Route::get('/detail/{id}', 'KostController@detailKost');
