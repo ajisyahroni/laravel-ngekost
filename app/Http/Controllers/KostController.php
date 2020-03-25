@@ -25,12 +25,13 @@ class KostController extends Controller
      */
     public function index()
     {
-        $data_kost = DssKost::with('fasilitasKamar')
-            ->with('fasilitasPenunjang')
-            ->with('fasilitasLingkungan')
-            ->get();
+        return "everythign suck here";
+        // $data_kost = DssKost::with('fasilitasKamar')
+        //     ->with('fasilitasPenunjang')
+        //     ->with('fasilitasLingkungan')
+        //     ->get();
 
-        return view('kost', ['kost' => $data_kost]);
+        // return view('kost', ['kost' => $data_kost]);
     }
 
 
