@@ -13,9 +13,9 @@
           <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
             <thead>
               <tr>
-
+                <th>No.</th>
                 <th>Nama Kost</th>
-                <th>Harga (/bulan)</th>
+                <th>Harga (rb/bulan)</th>
                 <th>Jarak (m)</th>
                 <th>Luas Kamar (m2)</th>
                 <th>Photo</th>
@@ -27,20 +27,23 @@
               </tr>
             </thead>
             <tbody>
+              {{$no = 1}}
               @foreach($data_kosts as $kost)
+
               <tr>
+                <td>{{ $no++ }}.</td>
                 <td>{{ $kost->nama}}</td>
                 <td>{{ $kost->harga}}</td>
                 <td>{{ $kost->jarak}}</td>
                 <td>{{ $kost->luas_kamar}}</td>
                 <td><img width="60px" src="{{ $kost->foto }}"></td>
                 <td>{{ $kost->tipe}}</td>
-                <td>{{ $kost->id_fasilitas_kamar}}</td>
-                <td>{{ $kost->id_fasilitas_penunjang}}</td>
-                <td>{{ $kost->id_fasilitas_lingkungan}}</td>
+                <td>{{ $kost->fasilitasKamar->nama }}</td>
+                <td>{{ $kost->fasilitasPenunjang->nama }}</td>
+                <td>{{ $kost->fasilitasLingkungan->nama }}</td>
                 <td>
-                  <a href="/alternatif_kost/edit/{{ $kost->id }}" class="btn btn-primary btn-sm"><i class=" fa fa-edit"></i></a>
-                  <a href="/alternatif_kost/hapus/{{ $kost->id }}" class="btn btn-danger btn-sm"><i class=" fa fa-trash"></i></a>
+                  <a href="/admin/alternatif_kost/edit/{{ $kost->id }}" class="btn btn-primary btn-sm"><i class=" fa fa-edit"></i></a>
+                  <a href="/admin/alternatif_kost/hapus/{{ $kost->id }}" class="btn btn-danger btn-sm"><i class=" fa fa-trash"></i></a>
                 </td>
               </tr>
               @endforeach
@@ -63,7 +66,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form action="/alternatif_kost/store" method="POST" enctype="multipart/form-data">
+        <form action="/admin/alternatif_kost/store" method="POST" enctype="multipart/form-data">
           @csrf
           <div class="form-group">
             <label>Nama Alternatif</label>
@@ -83,18 +86,19 @@
           <div class="form-group">
             <label>Luas Kamar (m2)</label>
             <select class="form-control" name="luas">
-              <option>2 X 3</option>
-              <option>3 X 3</option>
-              <option>3 X 4</option>
-              <option>4 X 4</option>
-              <option>4 X 5</option>
+              <option value="6">2 X 3</option>
+              <option value="9">3 X 3</option>
+              <option value="12">3 X 4</option>
+              <option value="16">4 X 4</option>
+              <option value="20">4 X 5</option>
+            </select>
           </div>
 
           <div class="form-group">
             <label>Tipe Aternatif</label>
             <select class="form-control" name="tipe_alternatif">
-              <option>Putra</option>
-              <option>Putri</option>
+              <option value="putra">Putra</option>
+              <option value="putri">Putri</option>
             </select>
           </div>
 
@@ -127,7 +131,23 @@
 
           <div class="form-group">
             <label>Photo Kost</label><br>
-            <input type="file" name="file" class="form-control">
+            <input id="fotoUploader"type="file" name="file" class="form-control">
+            <br>
+            <img class="img-thumbnail" id="preview" alt="">
+            <script>
+                var foto = document.getElementById('fotoUploader')
+                var preview = document.getElementById('preview')
+
+                foto.onchange = function(evt){
+                    var reader = new FileReader()
+                    var file = evt.target.files[0]
+
+                    reader.onload = function() {
+                        preview.src = reader.result
+                    }
+                    reader.readAsDataURL(file)
+                }
+            </script>
           </div>
       </div>
       <div class="modal-footer">

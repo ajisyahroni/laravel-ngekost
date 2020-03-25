@@ -3,7 +3,7 @@
 @section('content')
 <div class="container-fluid">
     <h3><i class="fas fa-edit"></i>EDIT ALTERNATIF KOS</h3>
-    <form enctype="multipart/form-data" method="post" action="/alternatif_kost/update/{{$kost->id}}">
+    <form enctype="multipart/form-data" method="post" action="/admin/alternatif_kost/update/{{$kost->id}}">
         @csrf
         <div>
             <label>Nama Alternatif</label>
@@ -73,7 +73,8 @@
             <br>
             <input id="fotoUploader" type="file" name="file">
             <br>
-            <img id="preview" src="{{ $kost->foto }}" alt="">
+            <br>
+            <img class="img-thumbnail" id="preview" src="{{ $kost->foto }}" alt="">
             <script>
                 var foto = document.getElementById('fotoUploader')
                 var preview = document.getElementById('preview')
@@ -92,8 +93,5 @@
         <button type="submit" class="btn btn-primary btn-sm mt-3">Simpan</button>
     </form>
 </div>
-
-
-
 
 @endsection

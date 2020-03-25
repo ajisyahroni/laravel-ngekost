@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/') }}">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{ url('/admin') }}">
         <div class="sidebar-brand-icon">
           <i class="fas fa-home"></i>
         </div>
@@ -13,7 +13,7 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="{{ url('/') }}">
+        <a class="nav-link" href="{{ url('/admin') }}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
@@ -28,13 +28,13 @@
 
       <!-- Nav Item - Tables -->
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('/alternatif_kost') }}">
+        <a class="nav-link" href="{{ url('/admin/alternatif_kost') }}">
           <i class="fas fa-home"></i>
           <span>ALTERNATIF KOST</span></a>
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="{{ url('/profil') }}">
+        <a class="nav-link" href="{{ url('/admin/profil') }}">
           <i class="fas fa-smile"></i>
           <span>PROFIL ADMIN</span></a>
       </li>
