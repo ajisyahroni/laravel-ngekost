@@ -14,6 +14,7 @@ class KostController extends Controller
 {
     public function detailKost(Request $request, $id)
     {
+        $suggested_kost = DssKost::all()->random(3);
 
         $detail_kost = DssKost::where('id', $id)
             ->with('fasilitasKamar')
@@ -21,7 +22,40 @@ class KostController extends Controller
             ->with('fasilitasLingkungan')
             ->first();
 
-        return view('detail', ['detail_kost' => $detail_kost]);
+        /*
+        2 * 3 = 6
+        3 * 3 = 9
+        3 * 4 = 12
+        4 * 4 = 16 
+        5 * 4 = 20
+        */
+
+
+        switch ($detail_kost->luas_kamar) {
+            case 6:
+                $detail_kost->luas_kamar = '2 x 3';
+                break;
+            case 9:
+                $detail_kost->luas_kamar = '3 x 3';
+                break;
+            case 12:
+                $detail_kost->luas_kamar = '3 x 4';
+                break;
+            case 16:
+                $detail_kost->luas_kamar = '4 x 4';
+                break;
+            case 20:
+                $detail_kost->luas_kamar = '4 x 5';
+                break;
+            default:
+                $detail_kost->luas_kamar = 'tidak disebutkan';
+                break;
+        }
+
+        return view('detail', [
+            'detail_kost' => $detail_kost,
+            'suggested_kost' => $suggested_kost
+        ]);
     }
     /**
      * Display a listing of the resource.

@@ -110,8 +110,14 @@ class weightProductController extends Controller
             'sigma vector' => $sigmaVector,
             'data' => $sorted
         ];
-        // return response()->json($res);
 
-        return view('recomendation', ['kost' => $sorted]);
+        $runnerUp = collect($sorted)->take(2);
+        $generalKost = collect($sorted)->splice(3);
+
+
+        return view('recomendation', [
+            'runner' => $runnerUp,
+            'kost' => $generalKost
+        ]);
     }
 }
