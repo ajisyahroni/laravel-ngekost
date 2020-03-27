@@ -138,7 +138,7 @@
                         <p class="cta-text"> Fitur rekomendasi adalah membantu kamu dalam mencari kost sesuai dengan kriteria kost yang kamu cari</p>
                     </div>
                     <div class="col-lg-3 cta-btn-container text-center">
-                        <a class="cta-btn align-middle" href="rekomend/">Coba Gratis</a>
+                        <a class="cta-btn align-middle" href="userinput/">Coba Gratis</a>
                     </div>
                 </div>
 
