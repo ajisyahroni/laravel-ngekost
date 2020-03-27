@@ -55,7 +55,7 @@
 
             <div class="logo float-left">
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <h1 class="text-light"><a href="#intro" class="scrollto"><span>NGEKOST</span></a></h1>
+                <h1 class="text-light"><a href="/" class="scrollto"><span>NGEKOST</span></a></h1>
                 <!-- <a href="#header" class="scrollto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
             </div>
 

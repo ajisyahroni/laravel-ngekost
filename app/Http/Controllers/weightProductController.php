@@ -49,18 +49,19 @@ class weightProductController extends Controller
     public function index(Request $req)
     {
         $arrayOfWeight = [];
-        // if ($req->harga && $req->jarak && $req->luas_kamar && $req->fasilitasKamar && $req->fasilitasPenunjang && $req->fasilitasLingkungan) {
-        $arrayOfWeight = [
-            intval($req->harga),
-            intval($req->jarak),
-            intval($req->luas_kamar),
-            intval($req->fasilitasKamar),
-            intval($req->fasilitasPenunjang),
-            intval($req->fasilitasLingkungan)
-        ];
-        // } else {
-        //     $arrayOfWeight = [3, 3, 3, 3, 3, 3];
-        // }
+        $arrayOfRequest = ['harga', 'jarak', 'luasKamar', 'fasilitasKamar', 'fasilitasPenunjang', 'fasilitasLingkungan'];
+        if ($req->has($arrayOfRequest)) {
+            $arrayOfWeight = [
+                intval($req->harga),
+                intval($req->jarak),
+                intval($req->luas_kamar),
+                intval($req->fasilitasKamar),
+                intval($req->fasilitasPenunjang),
+                intval($req->fasilitasLingkungan)
+            ];
+        } else {
+            $arrayOfWeight = [3, 3, 3, 3, 3, 3];
+        }
 
 
 

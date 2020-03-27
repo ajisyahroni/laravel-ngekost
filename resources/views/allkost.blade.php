@@ -39,6 +39,18 @@
 
     <!-- ======= Header ======= -->
     <header id="header">
+
+        <!-- <div id="topbar">
+      <div class="container">
+        <div class="social-links">
+          <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+          <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+          <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+          <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+        </div>
+      </div>
+    </div> -->
+
         <div class="container">
 
             <div class="logo float-left">
@@ -62,60 +74,29 @@
             </nav><!-- .main-nav -->
 
         </div>
-    </header>
+    </header><!-- #header -->
+
+
     <main id="main">
-        <!-- ======= Features Section ======= -->
-        <section id="features" class="features">
-            <div class="container">
-
-                <div class="row feature-item">
-                    <div class="col-lg-6 wow fadeInUp">
-                        <img src="{{ $detail_kost->foto }}" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-                        <h4>{{ $detail_kost->nama }}</h4>
-                        <hr>
-                        <h5>
-                            Rp. <strong style="color:  #1bb1dc;">{{ $detail_kost->harga }},000</strong> / bln
-                        </h5>
-                        <p>
-                            kost <strong>{{ $detail_kost->tipe}}</strong> luas kamar {{ $detail_kost->luas_kamar }} m,
-                            <br>
-                            <span style="color:  #1bb1dc;">
-                                berjarak {{$detail_kost->jarak}} dari AMIKOM</span>
-                        </p>
-                        <h4>Fasilitas</h4>
-                        <p>
-                            <strong style="color:  #1bb1dc;">Fasilitas kamar</strong>
-                            adalah {{$detail_kost->fasilitasKamar->nama}},
-                            <strong style="color:  #1bb1dc;">ditunjang fasilitas</strong>
-                            {{$detail_kost->fasilitasPenunjang->nama}},
-                            dilengkapi <strong style="color:  #1bb1dc;">lingkungan</strong> dengan fasilitas {{$detail_kost->fasilitasPenunjang->nama}}</p>
-                    </div>
-                </div>
 
 
-            </div>
-        </section><!-- End Features Section -->
-
-
+        <!-- ======= Services Section ======= -->
         <section id="services" class="services section-bg">
             <div class="container">
 
                 <header class="section-header">
-                    <h3>Lihat Kost Lain</h3>
-                    <p>Daftar kost-kostan yang tersedia dalam aplikasi ini</p>
+                    <h3>Daftar Semua Kost</h3>
+                    <p>Daftar semua kost dalam aplikasi ini</p>
                 </header>
-
                 <div class="row">
-                    @foreach($suggested_kost as $key => $value)
+                    @foreach($kost as $key => $value)
                     <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
                         <div class="box">
-                            <img height="200" src="{{ $value->foto }}" class="img-fluid" alt="">
-                            <h4 class="title mt-3"><a href="">{{ $value->nama }}</a></h4>
+                            <img height="200px" src="{{ $value['foto'] }}" class="img-fluid" alt="">
+                            <h4 class="title mt-3"><a href="">{{ $value['nama'] }}</a></h4>
                             <p class="description">
-                                <div>Rp. <strong style="color: #1bb1dc;">{{ $value->harga }}</strong>/bln </div>
-                                <div class="mt-2" style="color: #1bb1dc;">{{ $value->jarak }}m dari amikom</div>
+                                <div>Rp. <strong style="color: #1bb1dc;">{{ $value['harga'] }}</strong> / bln</div>
+                                <div class="mt-2" style="color: #1bb1dc;">{{ $value['jarak'] }}m dari amikom</div>
 
                             </p>
                             <a href="/detail/{{$value['id']}}" class="btn btn-info btn-block mt-3">Lihat</a>
@@ -131,7 +112,6 @@
 
 
     </main><!-- End #main -->
-
 
     <!-- ======= Footer ======= -->
     <footer id="footer" class="section-bg">

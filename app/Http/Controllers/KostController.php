@@ -83,13 +83,20 @@ class KostController extends Controller
             ]
         );
     }
-
+    public function showallKostData()
+    {
+        $allDataKost = DssKost::all();
+        return view('allkost', [
+            'kost' => $allDataKost
+        ]);
+    }
     public function index()
     {
-        $data_kost = DssKost::with('fasilitasKamar')
-            ->with('fasilitasPenunjang')
-            ->with('fasilitasLingkungan')
-            ->get();
+        // $data_kost = DssKost::with('fasilitasKamar')
+        //     ->with('fasilitasPenunjang')
+        //     ->with('fasilitasLingkungan')
+        //     ->get();
+        $data_kost = DssKost::all()->random(6);
 
         return view('kost', ['kost' => $data_kost]);
     }

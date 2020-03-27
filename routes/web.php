@@ -40,3 +40,5 @@ Route::get('/detail/{id}', 'KostController@detailKost');
 Route::get('/userinput', function () {
     return view('user');
 });
+
+Route::get('/allKost', 'KostController@showallKostData');

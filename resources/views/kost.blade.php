@@ -55,7 +55,7 @@
 
             <div class="logo float-left">
                 <!-- Uncomment below if you prefer to use an image logo -->
-                <h1 class="text-light"><a href="#intro" class="scrollto"><span>NGEKOST</span></a></h1>
+                <h1 class="text-light"><a href="/" class="scrollto"><span>NGEKOST</span></a></h1>
                 <!-- <a href="#header" class="scrollto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
             </div>
 
@@ -65,10 +65,10 @@
                         <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
                     </li>
                     <li>
-                        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/aji_jons/" class="instagram"><i class="fa fa-instagram"></i></a>
                     </li>
                     <li>
-                        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/aji.syahroni.ardianto" class="facebook"><i class="fa fa-facebook"></i></a>
                     </li>
                 </ul>
             </nav><!-- .main-nav -->
@@ -126,6 +126,10 @@
                 </div>
 
             </div>
+            <div class="text-center">
+                <a class="" href="/allKost">See more</a>
+            </div>
+
         </section><!-- End Services Section -->
 
 
@@ -154,14 +158,12 @@
                         <img src="{{ asset('img/features-1.svg') }}" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-6 wow fadeInUp pt-5 pt-lg-0">
-                        <h4>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h4>
+                        <h4>Apa itu Ngekost ?</h4>
                         <p>
-                            Ipsum in aspernatur ut possimus sint. Quia omnis est occaecati possimus ea. Quas molestiae perspiciatis
-                            occaecati qui rerum. Deleniti quod porro sed quisquam saepe. Numquam mollitia recusandae non ad at et a.
+                            Ngekost adala aplikasi berbasis web yang membantu para pencari kost area <strong>Condong Catur Yogyakarta</strong>, aplikasi ini memiliki daftar kost di area Condong Catur.
                         </p>
                         <p>
-                            Ad vitae recusandae odit possimus. Quaerat cum ipsum corrupti. Odit qui asperiores ea corporis deserunt
-                            veritatis quidem expedita perferendis. Qui rerum eligendi ex doloribus quia sit. Porro rerum eum eum.
+                            Aplikasi ini dilengkapi fitur rekomendasi kost-kostan berdasarkan kriteria keinginan user, aplikasi ini merupakan prasyarat tugas akhir skripsi <strong>Universitas Amikom Yogyakarta (UAYO)</strong>.
                         </p>
                     </div>
                 </div>
@@ -172,19 +174,12 @@
                     </div>
 
                     <div class="col-lg-6 wow fadeInUp pt-4 pt-lg-0 order-2 order-lg-1">
-                        <h4>Neque saepe temporibus repellat ea ipsum et. Id vel et quia tempora facere reprehenderit.</h4>
+                        <h4>How It Works ?</h4>
                         <p>
-                            Delectus alias ut incidunt delectus nam placeat in consequatur. Sed cupiditate quia ea quis. Voluptas nemo
-                            qui aut distinctio. Cumque fugit earum est quam officiis numquam. Ducimus corporis autem at blanditiis
-                            beatae incidunt sunt.
+                            Daftar Kost dalam aplikasi ini diperoleh dari startup <strong>Mamikos</strong>, proses pengambilan data dilakukan dengan cara scraping data, data yang diambil bersifat publik tanpa menyalahi aturan.
                         </p>
                         <p>
-                            Voluptas saepe natus quidem blanditiis. Non sunt impedit voluptas mollitia beatae. Qui esse molestias.
-                            Laudantium libero nisi vitae debitis. Dolorem cupiditate est perferendis iusto.
-                        </p>
-                        <p>
-                            Eum quia in. Magni quas ipsum a. Quis ex voluptatem inventore sint quia modi. Numquam est aut fuga
-                            mollitia exercitationem nam accusantium provident quia.
+                            Algoritma yang digunakan dalam aplikasi <strong>Ngekost</strong> adalah Weight Product (WP), dengan 6 kriteria yaitu harga, jarak, luas kamar, fasilitas kamar, fasilitas penunjang, dan fasilitas lingkungan.
                         </p>
                     </div>
 

@@ -16,6 +16,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Montserrat:300,400,500,600,700" rel="stylesheet">
     <link href="{{ asset('vendor/bootstrap/css/bootstrap.min.css' )}}" rel="stylesheet">
+    <link href="{{asset('/css/style.css')}}" rel="stylesheet">
     <!-- =======================================================
   * Template Name: Rapid - v2.0.0
   * Template URL: https://bootstrapmade.com/rapid-multipurpose-bootstrap-business-template/
@@ -66,6 +67,7 @@
         <!-- FASILITAS KAMAR -->
         <div class="mt-5 d-none" id="fasilitasKamarSection">
             <h2>Fasilitas Kamar kost penting gasihh menurut lo ?</h2>
+            <i>Kasur, TV, dispenser dll</i>
             <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewFasilitasKamar" alt="">
 
             <h3 class="text-center mt-3"><strong id="textFasilitasKamar">cukup penting</strong></h3>
@@ -78,6 +80,7 @@
         <!-- FASILITAS PENUNJANG -->
         <div class="mt-5 d-none" id="fasilitasPenunjangSection">
             <h2>Fasilitas Penunjang kost penting gasihh menurut lo ?</h2>
+            <i>kamar mandi dalam, tempat jemuran, mesin cuci dll</i>
             <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewFasilitasPenunjang" alt="">
 
             <h3 class="text-center mt-3"><strong id="textFasilitasPenunjang">cukup penting</strong></h3>
@@ -90,6 +93,7 @@
         <!-- FASILITAS LINGKUNGAN -->
         <div class="mt-5 d-none" id="fasilitasLingkunganSection">
             <h2>Fasilitas Lingkungan kost penting gasihh menurut lo ?</h2>
+            <i>Deket akses publik terminal, kantin dll</i>
             <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewFasilitasLingkungan" alt="">
 
             <h3 class="text-center mt-3"><strong id="textFasilitasLingkungan">cukup penting</strong></h3>
