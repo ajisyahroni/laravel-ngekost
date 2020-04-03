@@ -35,3 +35,5 @@ Route::get('/user', 'weightProductController@show');
 
 Route::get('/rekomend', 'weightProductController@index');
 Route::get('/detail/{id}', 'KostController@detailKost');
+Route::get('/about', 'KostController@about');
+

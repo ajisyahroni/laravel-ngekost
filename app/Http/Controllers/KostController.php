@@ -197,4 +197,9 @@ class KostController extends Controller
      */
     public function destroy($id)
     { }
+
+    public function about()
+    {
+        return view('about');
+    }
 }
