@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>NGEKOST &mdash; SPK KOST WP</title>
+    <title>About NGEKOST</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -40,13 +40,14 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo m-0 p-0"><a href="/user" class="mb-0">NGEKOST</a></h1>
+            <h1 class="mb-0 site-logo m-0 p-0"><a href="/" class="mb-0">NGEKOST</a></h1>
           </div>
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="/user" class="nav-link">Home</a></li>
-                <li><a href="/rekomend" class="nav-link">Rekomendasi WP</a></li>
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/allKost" class="nav-link">All Kost</a></li>
+                <li><a href="/userinput/" class="nav-link">Rekomendasi WP</a></li>
                 <li><a href="/about" class="nav-link">About</a></li>
                 <li><a href="/login" class="nav-link">Login</a></li>
               </ul>
@@ -64,7 +65,6 @@
           <div class="col-md-5 mx-auto mt-lg-5 text-center">
             <h1>About NGEKOST</h1>
             <p class="mb-5"><strong class="text-white">Apa itu NGEKOST?</strong></p>
-            
           </div>
         </div>
       </div>

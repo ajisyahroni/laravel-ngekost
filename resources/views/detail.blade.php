@@ -42,14 +42,15 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo m-0 p-0"><a href="/user" class="mb-0">NGEKOST</a></h1>
+            <h1 class="mb-0 site-logo m-0 p-0"><a href="/" class="mb-0">NGEKOST</a></h1>
           </div>
 
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="/user" class="nav-link">Home</a></li>
-                <li><a href="/rekomend" class="nav-link">Rekomendasi WP</a></li>
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/allKost" class="nav-link">All Kost</a></li>
+                <li><a href="/userinput/" class="nav-link">Rekomendasi WP</a></li>
                 <li><a href="/about" class="nav-link">About</a></li>
                 <li><a href="/login" class="nav-link">Login</a></li>
               </ul>
@@ -62,48 +63,48 @@
     </header>
 
     
-    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url(images/home_2.jpg);" data-aos="fade">
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('{{ asset('werehouse/images/home_2.jpg') }}')" data-aos="fade">
       <div class="container">
         <div class="row align-items-center justify-content-center">
           <div class="col-md-5 mx-auto mt-lg-5 text-center">
-            <h1>Nama Kost</h1>
-            <p class="mb-5"><strong class="text-white">Harga KOST</strong></p>
+            <h1>{{ $detail_kost->nama }}</h1>
+            <p class="mb-5"><strong class="text-white">Rp. {{ $detail_kost->harga }} 000</strong></p>
           </div>
         </div>
       </div>
-      <a href="/detail" class="smoothscroll arrow-down"><span class="icon-arrow_downward"></span></a>
+      <a href="/detail" class=""><span class="icon-arrow_downward"></span></a>
     </div>  
 
     
-    
-    <div class="site-section" id="property-details">
+  
       <div class="container">
         <div class="row">
-          <div class="col-lg-7">
-            <div class="owl-carousel slide-one-item with-dots">
-              <div><img src="images/putri2.jpg" alt="Image" class="img-fluid"></div>
+          <div class="col-lg-7 mt-5">
+            <div>
+              <div><img src="{{ $detail_kost->foto }}" alt="Image" class="img-fluid"></div>
             </div>
           </div>
           <div class="col-lg-5 pl-lg-5 ml-auto">
-            <div class="mb-5">
-              <h3 class="text" style="color: #37cfa2;">Details KOST</h3>
-              <h6>Putra/Putri</h6>
-              <h6>Harga Kost / Bulan</h6>
-              <h2 style="color: aqua;">Rp. 60000</h2>
-              <h6>Jarak Ke AMIKOM</h6>
-              <h6 style="color: aqua;">300 meter</h6>
+            <div class="mb-5 mt-5">
+              <h6 class="text" style="color: #37cfa2;">Details KOST</h6>
+              <h3>{{ $detail_kost->nama }}</h3>
+              <h4>{{ $detail_kost->tipe}}</h4>
+              <p>Luas Kamar {{ $detail_kost->luas_kamar }} m2 , Jarak ke AMIKOM {{$detail_kost->jarak}} meter dari AMIKOM
+              </p>
+              <h4>Harga Kost / Bulan</h4>
+              <h2 style="color: aqua;">Rp. {{ $detail_kost->harga }} 000</h2>
               <br>
               <h5 class="text-black">Fasilitas</h5>
-              <p>Fasilitas kamar adalah kasur, ditunjang fasilitas kamar mandi luar, tempat cuci dan jemur, parkiran, dapur, dilengkapi lingkungan dengan fasilitas kamar mandi luar, tempat cuci dan jemur, parkiran, dapur</p>
-              <h6>Nilai Rekomendasi</h6>
-              <h6 style="color: aqua;">0,045339</h6>
-
-              <p><a href="#" class="btn btn-primary">Kembali</a></p>
+              <p>
+                <strong style="color: aqua;">Fasilitas Kamar adalah</strong> {{$detail_kost->fasilitasKamar->nama}},
+                <strong style="color: aqua;">Fasilitas Penunjang adalah</strong> {{$detail_kost->fasilitasPenunjang->nama}},
+                <strong style="color: aqua;">Fasilitas Umum di sekitar kos adalah</strong>{{$detail_kost->fasilitasPenunjang->nama}}
+              </p>
+              <p><a href="/" class="btn btn-primary">Kembali</a></p>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
     
     <footer>

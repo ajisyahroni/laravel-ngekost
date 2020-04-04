@@ -12,9 +12,8 @@
 */
 
 
-
-
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    
     Route::get('/alternatif_kost', 'KostController@showallAlternatif');
     Route::get('/', 'KostController@dashboard');
     Route::post('/alternatif_kost/store', 'KostController@store');
@@ -26,7 +25,6 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/profil', 'AdminController@profil');
 });
 
-
 Route::get('/index', 'KostController@index');
 
 Route::get('/', 'KostController@index');
@@ -35,5 +33,12 @@ Route::get('/user', 'weightProductController@show');
 
 Route::get('/rekomend', 'weightProductController@index');
 Route::get('/detail/{id}', 'KostController@detailKost');
+
+Route::get('/userinput', function () {
+    return view('user');
+});
+
+Route::get('/allKost', 'KostController@showallKostData');
+
 Route::get('/about', 'KostController@about');
 

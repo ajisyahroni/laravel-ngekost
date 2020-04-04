@@ -49,7 +49,7 @@
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/allKost" class="nav-link">All Kost</a></li>
-                <li><a href="userinput/" class="nav-link">Rekomendasi WP</a></li>
+                <li><a href="/rekomend" class="nav-link">Rekomendasi WP</a></li>
                 <li><a href="/about" class="nav-link">About</a></li>
                 <li><a href="/login" class="nav-link">Login</a></li>
               </ul>
@@ -73,7 +73,7 @@
             <div class="col-md-6 mt-lg-5 text-center">
               <h1 class="text-shadow">Temukan Kostmu Sesuai Keinginanmu</h1>
               <p class="mb-5 text-shadow">Aplikasi ini dibuat untuk memenuhi tugas akhir skripsi S1-Informatika Univeritas AMIKOM Yogyakarta</p>
-              <p><a href="userinput/" target="_blank" class="btn btn-primary px-5 py-3">Mulai Gratis</a></p> 
+              <p><a href="/rekomend" target="_blank" class="btn btn-primary px-5 py-3">Mulai Gratis</a></p> 
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@
             <div class="col-md-6 mt-lg-5 text-center">
               <h1 class="text-shadow">Temukan Kostmu Sesuai Keinginanmu</h1>
               <p class="mb-5 text-shadow">Implementasi Weighted Product Untuk Menentukan Kost Mahasiswa AMIKOM Yogyakarta</p>
-              <p><a href="userinput/" target="_blank" class="btn btn-primary px-5 py-3">Mulai Gratis</a></p>
+              <p><a href="/rekomend" target="_blank" class="btn btn-primary px-5 py-3">Mulai Gratis</a></p>
             </div>
           </div>
         </div>
@@ -93,7 +93,7 @@
     </div>   
   </div>   
 
-  <div class="site-section" id="">
+  <div class="site-section" id="properties-section">
       <div class="container">
         <div class="row large-gutters">
             @foreach($kost as $key =>$value)
@@ -115,98 +115,6 @@
         </div>
       </div>
     </div>
-            
-    <div class="text-center mb-5">
-        <a class="" href="/allKost" ><strong>--- See more ---</strong></a>
-    </div>
-
-    <section class="py-5 bg-primary site-section how-it-works" id="howitworks-section">
-      <div class="container">
-        <div class="row mb-5 justify-content-center">
-          <div class="col-md-7 text-center">
-            <h2 class="section-title mb-3 text-black">Rekomendasi Weighted Product</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 text-center">
-            <div class="pr-5 first-step">
-              <span class="text-black">01.</span>
-              <h3 class="text-black">Buka Web Ngekost.com</h3>
-              <p class="text-black">User Harus mengunjungi website Ngekost</p>
-            </div>
-          </div>
-
-          <div class="col-md-4 text-center">
-            <div class="pr-5 second-step">
-              <span class="text-black">02.</span>
-              <h3 class="text-dark">Pilih menu rekomendasi</h3>
-              <p class="text-black">User memilih menu rekomendasi pada website</p>
-            </div>
-          </div>
-
-          <div class="col-md-4 text-center">
-            <div class="pr-5">
-              <span class="text-black">03.</span>
-              <h3 class="text-dark">Masukkan kriteria</h3>
-              <p class="text-black">User memasukkan kriteria kost sesuai yang akan dicari kemudian klik rekomendasi</p>
-            </div>
-          </div>
-
-        </div>
-      </div>  
-    </section>
-
-
-
-    <section class="site-section" id="about-section">
-      <div class="container">
-        <div class="row large-gutters">
-          <div class="col-lg-6 mb-5">
-              <div class="owl-carousel slide-one-item with-dots">
-                  <div><img src="{{ asset('werehouse/images/img_2.jpg') }}" alt="Image" class="img-fluid"></div>
-                </div>
-          </div>
-          <div class="col-lg-6 ml-auto">
-            
-            <h2 class="section-title mb-3">NGEKOST</h2>
-                <p class="lead">Sistem Pendukung Keputusan Untuk Rekomendasi Kost Mahasiswa AMIKOM</p>
-                <p><strong>Ngekost</strong> adalah aplikasi berbasis web yang membantu para pencari kost area Condong Catur Yogyakarta, aplikasi ini memiliki daftar kost di area Condong Catur.
-
-                  Aplikasi ini dilengkapi fitur rekomendasi kost-kostan berdasarkan kriteria keinginan user, Data kost yang digunakan dalam penelitian ini diperoleh dari startup MAMIKOS, data bersifat publik tanpa menyalahi aturan. Dengan Kriteria Perhitungan Sebagai Berikut :
-                <ul class="list-unstyled ul-check success">
-                  <li>Harga Kost / Bulan</li>
-                  <li>Jarak Kost Ke AMIKOM (m)</li>
-                  <li>Luas Kamar (m2)</li>
-                  <li>Fasilitas Kamar</li>
-                  <li>Fasilitas Penunjang</li>
-                  <li>Fasilitas Lingkungan Sekitar Kost</li>
-                </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    
-    <section class="site-section bg-light" id="services-section">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-12 text-center">
-            <h2 class="section-title mb-3">WEIGHTED PRODUCT</h2>
-          </div>
-        </div>
-        <div>
-          <P><strong>Metode Weighted Product (WP)</strong> merupakan salah satu metode untuk menyelesaikan masalah Multi Attribute Decision Making(MADM) yang menggunakan perkalian untuk menghubungkan rating atribut,dimana rating setiap atribut harus dipangkatkan dulu dengan bobot atribut yang bersangkutan (Yoon,1989).
-            Langkah - langkah perhitungan metode Weighted Product (WP) :
-            <ol>
-              <li>Menentukan kriteria-kriteria yang akan dijadikan acuan dalam pengambilan keputusan</li>
-              <li>Menentukan input awal dan input akhir untuk merubah nama inputan menjadi nilai rating kecocokan dan menentukan bobot setiap kriteria</li>
-              <li>Mengubah data inputan menjadi nilai rating kecocokan</li>
-              <li>Melakukan perbaikan bobot dari setiap kriteria dengan cara menjumlahkan bobot setiap kriteria yang dilanjutkan dengan setiap bobot awal kriteria dibagi dengan hasil penjumlahan bobot kriteria</li>
-              <li>Menentukan nilai vektor S alternatif dengan cara mengalikan data nilai rating kecocokan yang berpangkat positif dari hasil perbaikan bobot kriteria</li>
-            </ol>
-          </div>
-      </div>
-    </section>
 
     <footer>
       <div class="container">
@@ -222,7 +130,7 @@
     </footer>
   </div>
 
-  <a href="#top" class="gototop"><span class="icon-angle-double-up"></span></a> 
+    <a href="#top" class="gototop"><span class="icon-angle-double-up"></span></a> 
 
   <script src="{{ asset('werehouse/js/jquery-3.3.1.min.js') }}"></script>
   <script src="{{ asset('werehouse/js/jquery-ui.js') }}"></script>
