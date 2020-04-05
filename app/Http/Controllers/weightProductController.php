@@ -49,7 +49,7 @@ class weightProductController extends Controller
     public function index(Request $req)
     {
         $arrayOfWeight = [];
-        $arrayOfRequest = ['harga', 'jarak', 'luasKamar', 'fasilitasKamar', 'fasilitasPenunjang', 'fasilitasLingkungan'];
+        $arrayOfRequest = ['tipe', 'harga', 'jarak', 'luasKamar', 'fasilitasKamar', 'fasilitasPenunjang', 'fasilitasLingkungan'];
         if ($req->has($arrayOfRequest)) {
             $arrayOfWeight = [
                 intval($req->harga),
@@ -65,10 +65,27 @@ class weightProductController extends Controller
 
 
 
-        $data_kost = DssKost::with('fasilitasKamar')
-            ->with('fasilitasPenunjang')
-            ->with('fasilitasLingkungan')
-            ->get();
+        $data_kost = [];
+
+        $tipe = $req->tipe;
+        if ($tipe == 'putra') {
+            $data_kost = DssKost::where('tipe', 'putra')
+                ->with('fasilitasKamar')
+                ->with('fasilitasPenunjang')
+                ->with('fasilitasLingkungan')
+                ->get();
+        } else if ($tipe == 'putri') {
+            $data_kost = DssKost::where('tipe', 'putri')
+                ->with('fasilitasKamar')
+                ->with('fasilitasPenunjang')
+                ->with('fasilitasLingkungan')
+                ->get();
+        } else {
+            $data_kost = DssKost::with('fasilitasKamar')
+                ->with('fasilitasPenunjang')
+                ->with('fasilitasLingkungan')
+                ->get();
+        }
 
 
         // // ARRAY BOBOT

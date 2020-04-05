@@ -27,9 +27,24 @@
 
 <body class="container">
     <form action="/rekomend">
-
+        <!-- TYPE -->
+        <div class="mt-5" id="typeSection">
+            <h2>Pilih type kost</h2>
+            <input type="hidden" name="tipe" value="campur" id="tipe">
+            <div class="row text-center">
+                <div class="col-md-4 my-2"><img style="cursor: pointer" onclick="selectType(this)" id="putra" width="200" height="200" src="{{asset('/img/type/man.png')}}" alt="">
+                    <p class="mt-2">Putra</p>
+                </div>
+                <div class="col-md-4 my-2"><img style="cursor: pointer" onclick="selectType(this)" id="putri" width="200" height="200" src="{{asset('/img/type/woman.png')}}" alt="">
+                    <p class="mt-2">Putri</p>
+                </div>
+                <div class="col-md-4 my-2"><img style="cursor: pointer" onclick="selectType(this)" id="campur" width="200" height="200" src="{{asset('/img/type/bisex.png')}}" alt="">
+                    <p class="mt-2">Campur</p>
+                </div>
+            </div>
+        </div>
         <!-- HARGA -->
-        <div class="mt-5" id="hargaSection">
+        <div class="mt-5 d-none" id="hargaSection">
             <h2>Harga kost penting gasihh menurut lo ?</h2>
             <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="preview" alt="">
 
@@ -112,7 +127,7 @@
 
 
     <script>
-        var step = 1;
+        var step = 0;
 
         function setElement(SliderElement, TextElement, ShadowElement, PreviewElement) {
             if (SliderElement >= 0 && SliderElement <= 20) {
@@ -137,6 +152,10 @@
                 PreviewElement.src = "/emoticon/sangat-penting.png"
             }
         }
+        // TIPE 
+        var typeSection = document.getElementById("typeSection")
+        var tipe = document.getElementById("tipe")
+
         // HARGA
         var hargaSection = document.getElementById("hargaSection")
         var slider = document.getElementById("sliderHarga")
@@ -203,11 +222,33 @@
             setElement(sliderFasilitasLingkungan.value, textFasilitasLingkungan, fasilitasLingkungan, previewFasilitasLingkungan)
         }
 
+        function selectType(evt) {
+            tipe.value = evt.id
+            // REMOVE ALL STYLE
+
+            let putra = document.getElementById("putra")
+            let putri = document.getElementById("putri")
+            let campur = document.getElementById("campur")
+            if (putra.classList.contains("border")) {
+                putra.classList.remove("border")
+            } else if (putri.classList.contains("border")) {
+                putri.classList.remove("border")
+            } else {
+                campur.classList.remove("border")
+            }
+
+
+            document.getElementById(evt.id).classList.add("border")
+        }
 
         function changeStep() {
 
             step = step + 1;
             switch (step) {
+                case 1:
+                    typeSection.style.display = "none"
+                    hargaSection.classList.remove("d-none")
+                    break;
                 case 2:
                     hargaSection.style.display = "none"
                     jarakSection.classList.remove("d-none")
