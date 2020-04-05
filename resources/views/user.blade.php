@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>User Input &mdash; SPK KOST WP</title>
+<head>
+    <title>NGEKOST INPUT</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -25,9 +25,7 @@
     
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-  
   <div class="site-wrap">
-
     <div class="site-mobile-menu site-navbar-target">
       <div class="site-mobile-menu-header">
         <div class="site-mobile-menu-close mt-3">
@@ -39,17 +37,13 @@
    
     
     <header class="site-navbar py-4 js-sticky-header site-navbar-target" role="banner">
-
       <div class="container">
         <div class="row align-items-center">
-          
           <div class="col-6 col-xl-2">
-            <h1 class="mb-0 site-logo m-0 p-0"><a href="/user" class="mb-0">NGEKOST</a></h1>
+            <h1 class="mb-0 site-logo m-0 p-0"><a href="/" class="mb-0">NGEKOST</a></h1>
           </div>
-
           <div class="col-12 col-md-10 d-none d-xl-block">
             <nav class="site-navigation position-relative text-right" role="navigation">
-
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="/allKost" class="nav-link">All Kost</a></li>
@@ -61,19 +55,16 @@
           </div>
           <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white float-right"><span class="icon-menu h3"></span></a></div>
         </div>
-      </div>      
+      </div>
     </header>
 
     
-    <div class="site-blocks-cover overlay" style="background-image: url('{{ asset('werehouse/images/home_2.jpg') }}')" data-aos="fade" id="home-section">
-
-
+    <div class="site-blocks-cover inner-page-cover overlay" style="background-image: url('{{ asset('werehouse/images/home_2.jpg') }}')" data-aos="fade">
       <div class="container">
         <div class="row align-items-center justify-content-center">
-          <div class="col-md-6 mt-lg-5 text-center">
-            <h1>HALAMAN REKOMENDASI</h1>
-            <p class="mb-5">Silahkan Inputkan Kriteria Kost Sesuai Yang Diinginkan</p>
-            
+          <div class="col-md-5 mx-auto mt-lg-5 text-center">
+            <h1>Slider Bobot Kriteria Sesuai Keinginanmu</h1>
+            <p class="mb-5"><strong class="text-white">Geser Slider!</strong></p>
           </div>
         </div>
       </div>
@@ -81,122 +72,94 @@
       <a href="#" class="smoothscroll arrow-down"><span class="icon-arrow_downward"></span></a>
     </div>  
 
-    
-    <div class="site-section" id="listings-section">
-      <div class="container">
-        
-        <div class="row">
-          <div class="col-md-3 order-1 order-md-2">
-          <div class="mb-5">
-            <h3 class="text-black mb-4 h5 font-family-2 align-center">PERHITUNGAN WP</h3>
-            <form action="#">
-              <div class="form-group">
-                <div class="select-wrap">
-                  <h6>Harga Kost</h6>
-                  <span class="icon icon-keyboard_arrow_down"></span>
-                  <select class="form-control px-3">
-                    <option value="">300</option>
-                    <option value="">500</option>
-                    <option value="">800</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="select-wrap">
-                  <h6>Jarak Kost</h6>
-                  <span class="icon icon-keyboard_arrow_down"></span>
-                  <select class="form-control px-3">
-                    <option value="">1000</option>
-                    <option value="">750</option>
-                    <option value="">500</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="select-wrap">
-                  <h6>Luas Kamar</h6>
-                  <span class="icon icon-keyboard_arrow_down"></span>
-                  <select class="form-control px-3">
-                    <option value="">2 x 3</option>
-                    <option value="">3 x 3</option>
-                    <option value="">3 x 4</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="select-wrap">
-                  <h6>Fasilitas Kamar</h6>
-                  <span class="icon icon-keyboard_arrow_down"></span>
-                  <select class="form-control px-3">
-                    <option value="">Kasur</option>
-                    <option value="">Guling</option>
-                    <option value="">Tv</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="select-wrap">
-                  <h6>Fasilitas Penunjang</h6>
-                  <span class="icon icon-keyboard_arrow_down"></span>
-                  <select class="form-control px-3">
-                    <option value="">Kamar mandi</option>
-                    <option value="">Tv Bersama</option>
-                    <option value="">Parkiran</option>
-                  </select>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="select-wrap">
-                  <h6>Fasilitas Lingkungan</h6>
-                  <span class="icon icon-keyboard_arrow_down"></span>
-                  <select class="form-control px-3">
-                    <option value="">Masjid</option>
-                    <option value="">Apotek</option>
-                    <option value="">Sekolah</option>
-                  </select>
-                </div>
-              </div>
-              <button type="submit" class="btn btn-primary">REKOMENDASI</button>
-            </form>
-            </div>
-          </div>
+    <div class="container">
+    <form action="/rekomend">
 
-          <div class="col-md-9 order-2 order-md-1">
-            <div class="row large-gutters">
-              @foreach($kost as $key =>$value)
-                <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
-                  <div class="ftco-media-1">
-                    <div class="ftco-media-1-inner">
-                      <a href="/detail/{{$value['id']}}" class="d-inline-block mb-4"><img src="{{ $value->foto }}" alt="FImageo" class="img-fluid"></a>
-                      <div class="ftco-media-details">
-                        <h3>{{ $value->nama }}</h3>
-                        <h4>{{ $value->tipe }}</h4>
-                        <br>
-                        <p>{{ $value->jarak }} m dari AMIKOM</p>
-                        <strong style="color: #37cfa2;">Rp.{{ $value->harga }} 000 / Bulan</strong>
-                      </div>
-                    </div> 
-                  </div>
-                </div>
-              @endforeach
-              </div>
-          </div>
+      <!-- HARGA -->
+      <div class="mt-5" id="hargaSection">
+          <h2 class="text-center mb-3 ">Seberapa penting HARGA KOST dalam memilih kost?</h2>
+          <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="preview" alt="">
 
-        <div class="row mt-4">
-          <div class="col-md-9">
-            <div class="custom-pagination text-center">
-              <span>1</span>
-              <a href="#">2</a>
-              <a href="#">3</a>
-              <span class="more-page">...</span>
-              <a href="#">7</a>
-            </div>
-            
-          </div>
-        </div>
+          <h3 class="text-center mt-3"><strong id="textHarga">cukup penting</strong></h3>
+
+
+          <input value="50" class="custom-range" type="range" name="" id="sliderHarga">
+          <input type="hidden" value="3" name="harga" id="harga">
       </div>
-    </div>
-    <footer>
+
+      <!-- JARAK -->
+      <div class="mt-5 d-none" id="jarakSection">
+          <h2 class="text-center mb-3 " >Jarak kost penting gasihh menurut lo ?</h2>
+          <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewJarak" alt="">
+
+          <h3 class="text-center mt-3"><strong id="textJarak">cukup penting</strong></h3>
+
+
+          <input class="custom-range" type="range" name="" id="sliderJarak">
+          <input type="hidden" value="3" name="jarak" id="jarak">
+      </div>
+
+      <!-- LUAS KAMAR -->
+      <div class="mt-5 d-none" id="luasKamarSection">
+          <h2 class="text-center mb-3 ">Luas Kamar kost penting gasihh menurut lo ?</h2>
+          <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewLuasKamar" alt="">
+
+          <h3 class="text-center mt-3"><strong id="textLuasKamar">cukup penting</strong></h3>
+
+
+          <input class="custom-range" type="range" name="" id="sliderLuasKamar">
+          <input type="hidden" value="3" name="luasKamar" id="luasKamar">
+      </div>
+
+      <!-- FASILITAS KAMAR -->
+      <div class="mt-5 d-none" id="fasilitasKamarSection">
+          <h2 class="text-center mb-3 ">Fasilitas Kamar kost penting gasihh menurut lo ?</h2>
+          <i>Kasur, TV, dispenser dll</i>
+          <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewFasilitasKamar" alt="">
+
+          <h3 class="text-center mt-3"><strong id="textFasilitasKamar">cukup penting</strong></h3>
+
+
+          <input class="custom-range" type="range" name="" id="sliderFasilitasKamar">
+          <input type="hidden" value="3" name="fasilitasKamar" id="fasilitasKamar">
+      </div>
+
+      <!-- FASILITAS PENUNJANG -->
+      <div class="mt-5 d-none" id="fasilitasPenunjangSection">
+          <h2 class="text-center mb-3 ">Fasilitas Penunjang kost penting gasihh menurut lo ?</h2>
+          <i>kamar mandi dalam, tempat jemuran, mesin cuci dll</i>
+          <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewFasilitasPenunjang" alt="">
+
+          <h3 class="text-center mt-3"><strong id="textFasilitasPenunjang">cukup penting</strong></h3>
+
+
+          <input class="custom-range" type="range" name="" id="sliderFasilitasPenunjang">
+          <input type="hidden" value="3" name="fasilitasPenunjang" id="fasilitasPenunjang">
+      </div>
+
+      <!-- FASILITAS LINGKUNGAN -->
+      <div class="mt-5 d-none" id="fasilitasLingkunganSection">
+          <h2 class="text-center mb-3 ">Fasilitas Lingkungan kost penting gasihh menurut lo ?</h2>
+          <i class="text-center">Deket akses publik terminal, kantin dll</i>
+          <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewFasilitasLingkungan" alt="">
+
+          <h3 class="text-center mt-3"><strong id="textFasilitasLingkungan">cukup penting</strong></h3>
+
+
+          <input class="custom-range" type="range" name="" id="sliderFasilitasLingkungan">
+          <input type="hidden" value="3" name="fasilitasLingkungan" id="fasilitasLingkungan">
+      </div>
+
+      <!-- SUMBIMT BUTTON -->
+      <input type="submit" id="submitButton" class="btn btn-block btn-success d-none" value="oke">
+      </form>
+
+
+      <button id="buttonChangeStep" onclick="changeStep()" class="btn btn-block btn-info mt-2 mb-5">Next</button>
+
+
+      
+      <footer>
       <div class="container">
         <div class="row text-center">
           <div class="col-md-12">
@@ -209,9 +172,119 @@
       </div>
     </footer>
 
-  </div> <!-- .site-wrap -->
+    </div>
 
-  <a href="#top" class="gototop"><span class="icon-angle-double-up"></span></a> 
+
+    <script>
+      var step = 1;
+      function setElement(SliderElement, TextElement, ShadowElement, PreviewElement) {
+          if (SliderElement >= 0 && SliderElement <= 20) {
+              TextElement.innerHTML = "sangat tidak penting";
+              ShadowElement.value = 1;
+              PreviewElement.src = "/emoticon/sangat-tidak-penting.png"
+          } else if (SliderElement > 20 && SliderElement <= 40) {
+              TextElement.innerHTML = "tidak penting";
+              ShadowElement.value = 2;
+              PreviewElement.src = "/emoticon/tidak-penting.png"
+          } else if (SliderElement > 40 && SliderElement <= 60) {
+              TextElement.innerHTML = "cukup penting"
+              ShadowElement.value = 3;
+              PreviewElement.src = "/emoticon/cukup-penting.png"
+          } else if (SliderElement > 60 && SliderElement <= 80) {
+              TextElement.innerHTML = "penting"
+              ShadowElement.value = 4;
+              PreviewElement.src = "/emoticon/penting.png"
+          } else {
+              TextElement.innerHTML = "sangat penting"
+              ShadowElement.value = 5;
+              PreviewElement.src = "/emoticon/sangat-penting.png"
+          }
+      }
+      // HARGA
+      var hargaSection = document.getElementById("hargaSection")
+      var slider = document.getElementById("sliderHarga")
+      var textHarga = document.getElementById("textHarga")
+      var harga = document.getElementById("harga")
+      var preview = document.getElementById("preview")
+      slider.oninput = function() {
+          setElement(slider.value, textHarga, harga, preview)
+      }
+      // JARAK
+      var jarakSection = document.getElementById("jarakSection")
+      var sliderJarak = document.getElementById("sliderJarak")
+      var textJarak = document.getElementById("textJarak")
+      var jarak = document.getElementById("jarak")
+      var previewJarak = document.getElementById("previewJarak")
+      sliderJarak.oninput = function() {
+          setElement(sliderJarak.value, textJarak, jarak, previewJarak)
+      }
+      // LUAS KAMAR
+      var luasKamarSection = document.getElementById("luasKamarSection")
+      var sliderLuasKamar = document.getElementById("sliderLuasKamar")
+      var textLuasKamar = document.getElementById("textLuasKamar")
+      var luasKamar = document.getElementById("luasKamar")
+      var previewLuasKamar = document.getElementById("previewLuasKamar")
+      sliderLuasKamar.oninput = function() {
+          setElement(sliderLuasKamar.value, textLuasKamar, luasKamar, previewLuasKamar)
+      }
+      // FASILITAS KAMAR
+      var fasilitasKamarSection = document.getElementById("fasilitasKamarSection")
+      var sliderFasilitasKamar = document.getElementById("sliderFasilitasKamar")
+      var textFasilitasKamar = document.getElementById("textFasilitasKamar")
+      var fasilitasKamar = document.getElementById("fasilitasKamar")
+      var previewFasilitasKamar = document.getElementById("previewFasilitasKamar")
+      sliderFasilitasKamar.oninput = function() {
+          setElement(sliderFasilitasKamar.value, textFasilitasKamar, fasilitasKamar, previewFasilitasKamar)
+      }
+      // FASILITAS PENUNJANG
+      var fasilitasPenunjangSection = document.getElementById("fasilitasPenunjangSection")
+      var sliderFasilitasPenunjang = document.getElementById("sliderFasilitasPenunjang")
+      var textFasilitasPenunjang = document.getElementById("textFasilitasPenunjang")
+      var fasilitasPenunjang = document.getElementById("fasilitasPenunjang")
+      var previewFasilitasPenunjang = document.getElementById("previewFasilitasPenunjang")
+      sliderFasilitasPenunjang.oninput = function() {
+          setElement(sliderFasilitasPenunjang.value, textFasilitasPenunjang, fasilitasPenunjang, previewFasilitasPenunjang)
+      }
+      // FASILITAS LINGKUNGAN
+      var fasilitasLingkunganSection = document.getElementById("fasilitasLingkunganSection")
+      var sliderFasilitasLingkungan = document.getElementById("sliderFasilitasLingkungan")
+      var textFasilitasLingkungan = document.getElementById("textFasilitasLingkungan")
+      var fasilitasLingkungan = document.getElementById("fasilitasLingkungan")
+      var previewFasilitasLingkungan = document.getElementById("previewFasilitasLingkungan")
+      sliderFasilitasLingkungan.oninput = function() {
+          setElement(sliderFasilitasLingkungan.value, textFasilitasLingkungan, fasilitasLingkungan, previewFasilitasLingkungan)
+      }
+      function changeStep() {
+          step = step + 1;
+          switch (step) {
+              case 2:
+                  hargaSection.style.display = "none"
+                  jarakSection.classList.remove("d-none")
+                  break;
+              case 3:
+                  jarakSection.style.display = "none"
+                  luasKamarSection.classList.remove("d-none")
+                  break;
+              case 4:
+                  luasKamarSection.style.display = "none"
+                  fasilitasKamarSection.classList.remove("d-none")
+                  break;
+              case 5:
+                  fasilitasKamarSection.style.display = "none"
+                  fasilitasPenunjangSection.classList.remove("d-none")
+                  break;
+              case 6:
+                  fasilitasPenunjangSection.style.display = "none"
+                  fasilitasLingkunganSection.classList.remove("d-none")
+                  break;
+              default:
+                  document.getElementById("buttonChangeStep").style.display = "none"
+                  document.getElementById("submitButton").classList.remove("d-none")
+                  break;
+          }
+      }
+
+    <a href="#top" class="gototop"><span class="icon-angle-double-up"></span></a> 
 
   <script src="{{ asset('werehouse/js/jquery-3.3.1.min.js') }}"></script>
   <script src="{{ asset('werehouse/js/jquery-ui.js') }}"></script>

@@ -55,13 +55,9 @@
               </ul>
             </nav>
           </div>
-
-
           <div class="col-6 d-inline-block d-xl-none ml-md-0 py-3"><a href="#" class="site-menu-toggle js-menu-toggle text-white float-right"><span class="icon-menu h3"></span></a></div>
-
         </div>
-      </div>
-      
+      </div> 
     </header>
 
     
