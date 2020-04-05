@@ -46,16 +46,33 @@ class weightProductController extends Controller
         return $value;
     }
 
-    public function index()
+    public function index(Request $req)
     {
+        $arrayOfWeight = [];
+        $arrayOfRequest = ['harga', 'jarak', 'luasKamar', 'fasilitasKamar', 'fasilitasPenunjang', 'fasilitasLingkungan'];
+        if ($req->has($arrayOfRequest)) {
+            $arrayOfWeight = [
+                intval($req->harga),
+                intval($req->jarak),
+                intval($req->luas_kamar),
+                intval($req->fasilitasKamar),
+                intval($req->fasilitasPenunjang),
+                intval($req->fasilitasLingkungan)
+            ];
+        } else {
+            $arrayOfWeight = [3, 3, 3, 3, 3, 3];
+        }
+
+
+
         $data_kost = DssKost::with('fasilitasKamar')
             ->with('fasilitasPenunjang')
             ->with('fasilitasLingkungan')
             ->get();
 
 
-        // ARRAY BOBOT
-        $arrayOfWeight = [5, 5, 4, 3, 2, 5];
+        // // ARRAY BOBOT
+        // $arrayOfWeight = [5, 5, 4, 3, 2, 5];
         $sumOfWeight = array_sum($arrayOfWeight);
 
 
@@ -98,20 +115,26 @@ class weightProductController extends Controller
         $collection = collect($arrayOfKost);
         $sorted = $collection->sortByDesc('vectorValue')->values()->all();
 
-        // $collectionOfKost->sortBy('harga');
-        // var_dump($collectionOfKost);
+        // // $collectionOfKost->sortBy('harga');
+        // // var_dump($collectionOfKost);
 
 
 
-        $res = [
-            'status' => 200,
-            'bobot normal' => $normalizedWeight,
-            'sigma bobot' => $sumOfWeight,
-            'sigma vector' => $sigmaVector,
-            'data' => $sorted
-        ];
-        // return response()->json($res);
+        // $res = [
+        //     'status' => 200,
+        //     'bobot normal' => $normalizedWeight,
+        //     'sigma bobot' => $sumOfWeight,
+        //     'sigma vector' => $sigmaVector,
+        //     'data' => $sorted
+        // ];
 
-        return view('recomendation', ['kost' => $sorted]);
+        $runnerUp = collect($sorted)->take(2);
+        $generalKost = collect($sorted)->splice(3);
+
+
+        return view('recomendation', [
+            'runner' => $runnerUp,
+            'kost' => $generalKost
+        ]);
     }
 }

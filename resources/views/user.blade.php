@@ -284,6 +284,8 @@
           }
       }
 
+    </script>
+
     <a href="#top" class="gototop"><span class="icon-angle-double-up"></span></a> 
 
   <script src="{{ asset('werehouse/js/jquery-3.3.1.min.js') }}"></script>

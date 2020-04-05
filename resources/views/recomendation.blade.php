@@ -72,20 +72,39 @@
         </div>
       </div>   
 
-  <div class="site-section" id="properties-section">
+  <div class="site-section" id="">
       <div class="container">
+        <div class="row large-gutters">
+            @foreach($runner as $key => $value)
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
+            <div class="ftco-media-1">
+              <div class="ftco-media-1-inner">
+                <a href="/detail/{{$value['id']}}" class="d-inline-block mb-4"><img src="{{ $value['foto'] }}" alt="FImageo" class="img-fluid"></a>
+                <div class="ftco-media-details">
+                  <h3>{{ $value['nama'] }}</h3>
+                  <h4>{{ $value['tipe'] }}</h4>
+                  <br>
+                  <p>{{ $value['jarak'] }} m dari AMIKOM</p>
+                  <strong style="color: #37cfa2;">Rp.{{ $value['harga'] }} 000 / Bulan</strong>
+                </div>
+              </div> 
+            </div>
+          </div>
+          @endforeach
+        </div>
+
         <div class="row large-gutters">
             @foreach($kost as $key =>$value)
           <div class="col-md-6 col-lg-4 mb-5 mb-lg-5 ">
             <div class="ftco-media-1">
               <div class="ftco-media-1-inner">
-                <a href="/detail/{{$value['id']}}" class="d-inline-block mb-4"><img src="{{ $value->foto }}" alt="FImageo" class="img-fluid"></a>
+                <a href="/detail/{{$value['id']}}" class="d-inline-block mb-4"><img src="{{ $value['foto'] }}" alt="FImageo" class="img-fluid"></a>
                 <div class="ftco-media-details">
-                  <h3>{{ $value->nama }}</h3>
-                  <h4>{{ $value->tipe }}</h4>
+                  <h3>{{ $value['nama'] }}</h3>
+                  <h4>{{ $value['tipe'] }}</h4>
                   <br>
-                  <p>{{ $value->jarak }} m dari AMIKOM</p>
-                  <strong style="color: #37cfa2;">Rp.{{ $value->harga }} 000 / Bulan</strong>
+                  <p>{{ $value['jarak'] }} m dari AMIKOM</p>
+                  <strong style="color: #37cfa2;">Rp.{{ $value['harga'] }} 000 / Bulan</strong>
                 </div>
               </div> 
             </div>
