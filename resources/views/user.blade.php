@@ -289,6 +289,8 @@
           break;
       }
 
+    }
+
     </script>
 
     <a href="#top" class="gototop"><span class="icon-angle-double-up"></span></a> 
