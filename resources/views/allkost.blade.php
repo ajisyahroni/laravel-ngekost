@@ -93,7 +93,7 @@
     </div>   
   </div>   
 
-  <div class="site-section" id="properties-section">
+  <div class="site-section" id="">
       <div class="container">
         <div class="row large-gutters">
             @foreach($kost as $key =>$value)

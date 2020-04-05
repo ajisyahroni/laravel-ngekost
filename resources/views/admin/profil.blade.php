@@ -5,7 +5,7 @@
     <div class="container-fluid">
     <h2 class="h3 mb-0 text-gray-800">Profil Admin</h2>
     <br>
-        <div class="card mb-3 " style="max-width: 540px;">
+        <div class="card " style="max-width: 540px;">
             <div class="row no-gutters">
                 <div class="col-md-4">
                 <img src="{{('/sbadmin/img/ryan_logo.jpg') }}" class="card-img" alt="...">

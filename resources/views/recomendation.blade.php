@@ -62,18 +62,61 @@
       </div>
     </header>
 
-    <div class="site-block-wrap">
-      <h1>Data kost runner up</h1>
-      @foreach($runner as $key => $value)
-      <p>{{ $value['nama'] }}</p>
-      @endforeach
+  <div class="site-block-wrap">
+    <div class="owl-carousel with-dots">
+      <div class="site-blocks-cover overlay overlay-2" style="background-image: url('{{ asset('werehouse/images/home_1.jpg') }}')" data-aos="fade" id="home-section">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-md-6 mt-lg-5 text-center">
+              <h1 class="text-shadow">Hasil Rekomendasi Weighted Product</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
 
+      <div class="row row large-gutters">
+          @foreach($runner as $key =>$value)
+          <div class="col-md-6 mt-3 mb-5 mb-lg-5 ">
+            <div class="ftco-media-1">
+              <div class="ftco-media-1-inner">
+                <a href="/detail/{{$value['id']}}" class="d-inline-block mb-4"><img src="{{ $value['foto'] }}" alt="FImageo" class="img-fluid"></a>
+                <div class="ftco-media-details">
+                  <h3 class="bg-warning text-white">{{ $value['vectorS']}}</h3>
+                  <h3>{{ $value['nama'] }}</h3>
+                  <h4>{{ $value['tipe'] }}</h4>
+                  <br>
+                  <p>{{ $value['jarak'] }} m dari AMIKOM</p>
+                  <strong style="color: #37cfa2;">Rp.{{ $value['harga'] }} 000 / Bulan</strong>
+                </div>
+              </div> 
+            </div>
+          </div>
+          @endforeach
+        </div>
 
-      <h1>Data kost biasa aja</h1>
-      @foreach($kost as $key => $value)
-      <p>{{ $value['nama'] }}</p>
-      @endforeach
-    </div>
+        <div class="row large-gutters">
+            @foreach($kost as $key =>$value)
+          <div class="col-md-6 col-lg-4 mb-5 mb-lg-5">
+            <div class="ftco-media-1">
+              <div class="ftco-media-1-inner">
+                <a href="/detail/{{$value['id']}}" class="d-inline-block mb-4"><img src="{{ $value['foto'] }}" alt="FImageo" class="img-fluid"></a>
+                <div class="ftco-media-details">
+                  <h3 class="bg-warning text-white">{{ $value['vectorS']}}</h3>
+                  <h3>{{ $value['nama'] }}</h3>
+                  <h4>{{ $value['tipe'] }}</h4>
+                  <br>
+                  <p>{{ $value['jarak'] }} m dari AMIKOM</p>
+                  <strong style="color: #37cfa2;">Rp.{{ $value['harga'] }} 000 / Bulan</strong>
+                </div>
+              </div> 
+            </div>
+          </div>
+          @endforeach
+        </div>
+  </div>
+
+  
 
     <a href="#top" class="gototop"><span class="icon-angle-double-up"></span></a>
 
