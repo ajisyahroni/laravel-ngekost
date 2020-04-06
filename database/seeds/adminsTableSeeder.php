@@ -15,7 +15,8 @@ class adminsTableSeeder extends Seeder
         DB::table('dss_admins')->insert([
             "nama" => "admin",
             "email" => "admin@gmail.com",
-            "password" => "root"
+            "password" => "root",
+            "foto" => "/sbadmin/img/ryan_logo.jpg"
         ]);
     }
 }

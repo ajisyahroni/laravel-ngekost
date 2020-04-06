@@ -11,7 +11,6 @@
 |
 */
 
-
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     
     Route::get('/alternatif_kost', 'KostController@showallAlternatif');
@@ -22,8 +21,9 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::get('/alternatif_kost/edit/{id}', 'KostController@edit');
     Route::get('/alternatif_kost/hapus/{id}', 'KostController@hapus');
 
-    Route::get('/profil', 'AdminController@profil');
+    Route::get('/profil', 'KostController@profil');
 });
+
 
 Route::get('/index', 'KostController@index');
 
@@ -38,7 +38,14 @@ Route::get('/userinput', function () {
     return view('user');
 });
 
-Route::get('/allKost', 'KostController@showallKostData');
+Route::get('/login', 'AuthController@login');
+Route::post('/postlogin', 'AuthController@postlogin');
 
+Route::get('/allKost', 'KostController@showallKostData');
 Route::get('/about', 'KostController@about');
 
+
+
+
+Route::get('native/login','AuthNativeController@index');
+Route::post('native/login','AuthNativeController@auth');

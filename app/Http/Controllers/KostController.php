@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use App\DssFasilitasKamar;
 use App\DssFasilitasPenunjang;
 use App\DssFasilitasLingkungan;
+use App\DssAdmin;
 
 class KostController extends Controller
 {
@@ -16,6 +17,8 @@ class KostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    
     public function dashboard()
     {
         return view('admin/dashboard');
@@ -253,4 +256,17 @@ class KostController extends Controller
     {
         return view('about');
     }
+
+    public function profil()
+    {
+        // $profil_admin = DssAdmin::all();
+
+        // return view('admin/profil',['admin/profil' => $profil_admin]);
+        return view('admin/profil');
+    }
+
+    // public function login()
+    // {
+    //     return view('login');
+    // }
 }
