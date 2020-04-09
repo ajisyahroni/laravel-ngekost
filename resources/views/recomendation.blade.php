@@ -75,6 +75,7 @@
       </div>
     </div> 
 
+    <div class="container">
       <div class="row row large-gutters">
           @foreach($runner as $key =>$value)
           <div class="col-md-6 mt-3 mb-5 mb-lg-5 ">
@@ -114,6 +115,7 @@
           </div>
           @endforeach
         </div>
+  </div>
   </div>
 
   

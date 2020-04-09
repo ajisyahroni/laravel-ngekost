@@ -9,6 +9,15 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
+        @if (count($errors) > 0)
+          <div class="alert alert-danger">
+              <ul>
+                  @foreach ($errors->all() as $error)
+                      <li>{{ $error }}</li>
+                  @endforeach
+              </ul>
+          </div>
+          @endif
           <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#tambah_alternatif"><i class="fas fa-plus fa-sm"></i>Tambah Alternatif</button>
           <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
             <thead>

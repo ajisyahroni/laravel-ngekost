@@ -12,12 +12,6 @@ use App\DssAdmin;
 
 class KostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
     
     public function dashboard()
     {
@@ -124,15 +118,19 @@ class KostController extends Controller
         $file = $request->file('file');
 
         $tujuan_upload = 'uploads/img';
-
-        if ($request->tipe_alternatif == 'Putra') {
-            $nama_file = "/$tujuan_upload/putra/" . time() . "_" . $file->getClientOriginalName();
-            $file->move($tujuan_upload, $nama_file);
-        } else {
-            $nama_file = "/$tujuan_upload/putri/" . time() . "_" . $file->getClientOriginalName();
-            $file->move($tujuan_upload, $nama_file);
-        };
-
+        $nama_file = "/$tujuan_upload/" . time() . "_" . $file->getClientOriginalName();
+        $file->move($tujuan_upload, $nama_file);
+        
+        $this->validate($request, [
+            'nama' => 'required',
+            'harga' => 'required',
+            'jarak' => 'required',
+            'luas_kamar' => 'required',
+            'tipe' => 'required',
+            'id_fasilitas_kamar' => 'required',
+            'id_fasilitas_penunjang' => 'required',
+            'id_fasilitas_lingkungan' => 'required'
+        ]);
 
         DB::table('dss_kosts')->insert([
             'nama' => $request->nama_kost,
@@ -146,7 +144,7 @@ class KostController extends Controller
             'id_fasilitas_lingkungan' => $request->fasilitas_lingkungan
         ]);
 
-        return redirect('/alternatif_kost');
+        return redirect('admin/alternatif_kost');
     }
 
     /**
@@ -166,11 +164,22 @@ class KostController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, Request $request)
     {
         $fasilitasKamar = DssFasilitasKamar::get();
         $fasilitasPenunjang = DssFasilitasPenunjang::get();
         $fasilitasLingkungan = DssFasilitasLingkungan::get();
+
+        $this->validate($request,[
+            'nama' => 'nama_kost',
+            'harga' => 'harga_kost',
+            'jarak' => 'jarak_kost',
+            'luas_kamar' => 'luas',
+            'tipe' => 'tipe_alternatif',
+            'id_fasilitas_kamar' => 'fasilitas_kamar',
+            'id_fasilitas_penunjang' => 'fasilitas_penunjang',
+            'id_fasilitas_lingkungan' => 'fasilitas_lingkungan'
+        ]);
 
         $edit_kost = DssKost::where('id', $id)
             ->with('fasilitasKamar')
@@ -196,29 +205,14 @@ class KostController extends Controller
      */
     public function update(Request $request, $id)
     {
-        echo $request->nama_kost;
-        echo $request->harga_kost;
-        echo $request->jarak_kost;
-        echo $request->luas_kost;
-        echo $request->tipe_alternatif;
-        echo $request->fasilitas_kamar;
-        echo $request->fasilitas_penunjang;
-        echo $request->fasilitas_lingkungan;
         $file = $request->file('file');
-
-        echo $id;
         $nama_file = "";
         $tujuan_upload = 'uploads/img';
 
-        // JIKA ADMIN MELAKUKAN UPDATE FOTO
         if ($file) {
-            if ($request->tipe_alternatif == 'Putra') {
-                $nama_file = "/$tujuan_upload/putra/" . time() . "_" . $file->getClientOriginalName();
-                $file->move($tujuan_upload, $nama_file);
-            } else {
-                $nama_file = "/$tujuan_upload/putri/" . time() . "_" . $file->getClientOriginalName();
-                $file->move($tujuan_upload, $nama_file);
-            };
+
+            $nama_file = "/$tujuan_upload/" . time() . "_" . $file->getClientOriginalName();
+            $file->move($tujuan_upload, $nama_file);
         }
 
         $updated = DB::table('dss_kosts')->where('id', $id)->first();
@@ -233,14 +227,19 @@ class KostController extends Controller
             "id_fasilitas_penunjang" => $request->fasilitas_penunjang ? $request->fasilitas_penunjang  : $updated->id_fasilitas_penunjang,
             "id_fasilitas_lingkungan" => $request->fasilitas_lingkungan ? $request->fasilitas_lingkungan  : $updated->id_fasilitas_lingkungan,
         ]);
+        return redirect('/admin/alternatif_kost');
     }
 
     public function hapus($id)
     {
         $hapus_kost = DssKost::where('id', $id);
+        $nama_file = DssKost::where('id', $id)->first()->foto;
+        $public_path_file = public_path() . $nama_file;
+
+        File::delete($public_path_file);
         $hapus_kost->delete();
 
-        return redirect('/alternatif_kost');
+        return redirect('/admin/alternatif_kost');
     }
 
     /**

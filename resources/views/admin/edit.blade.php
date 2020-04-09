@@ -9,11 +9,22 @@
             <label>Nama Alternatif</label>
             <input type="hidden" name="id" class="form-control" value="{{ $kost->id }}">
             <input type="text" name="nama_kost" class="form-control" value="{{ $kost->nama }}">
+
+            @if($errors->has('nama'))
+                <div class="text-danger">
+                    {{ $errors->first('nama')}}
+                </div>
+            @endif
         </div>
 
         <div>
             <label>Harga</label>
             <input type="text" name="harga_kost" class="form-control" value="{{ $kost->harga }}">
+            @if($errors->has('harga'))
+                <div class="text-danger">
+                    {{ $errors->first('harga')}}
+                </div>
+            @endif
         </div>
 
         <div>

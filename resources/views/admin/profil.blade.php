@@ -10,11 +10,11 @@
                 <div class="col-md-4">
                 <img src="{{('/sbadmin/img/ryan_logo.jpg') }}" class="card-img" alt="...">
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-12">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        <h5 class="card-title">Admin</h5>
+                        <h4 class="card-text">ryan.nugroho@students.amikom.ac.id</h4>
+                        <p4 class="card-text">S1 - INFORMATIKA</p4>
                     </div>
                 </div>
             </div>
