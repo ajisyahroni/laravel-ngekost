@@ -80,7 +80,7 @@
         <!-- TYPE -->
         <div class="mt-5" id="typeSection">
             <h2 class="text-center">Pilih type kost</h2>
-            <input type="hidden" name="tipe" value="campur" id="tipe">
+            <input type="hidden" name="tipe"  id="tipe">
             <div class="row text-center">
                 <div class="col-md-6 my-2"><img style="cursor: pointer" onclick="selectType(this)" id="putra" width="200" height="200" src="{{asset('/img/type/man.png')}}" alt="">
                     <p class="mt-2">Putra</p>
@@ -95,7 +95,7 @@
         </div>
         <!-- HARGA -->
         <div class="mt-5 d-none" id="hargaSection">
-            <h2>Harga kost penting gasihh menurut lo ?</h2>
+            <h2>Seberapa penting Harga Kost ?</h2>
             <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="preview" alt="">
 
             <h3 class="text-center mt-3"><strong id="textHarga">cukup penting</strong></h3>
@@ -107,7 +107,7 @@
 
         <!-- JARAK -->
         <div class="mt-5 d-none" id="jarakSection">
-            <h2>Jarak kost penting gasihh menurut lo ?</h2>
+            <h2>Seberapa Penting Jarak Kost ke Kampus?</h2>
             <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewJarak" alt="">
 
             <h3 class="text-center mt-3"><strong id="textJarak">cukup penting</strong></h3>
@@ -119,7 +119,7 @@
 
         <!-- LUAS KAMAR -->
         <div class="mt-5 d-none" id="luasKamarSection">
-            <h2>Luas Kamar kost penting gasihh menurut lo ?</h2>
+            <h2>Seberapa Penrting Luas Kamar dalam Meilih Kost</h2>
             <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewLuasKamar" alt="">
 
             <h3 class="text-center mt-3"><strong id="textLuasKamar">cukup penting</strong></h3>
@@ -131,7 +131,7 @@
 
         <!-- FASILITAS KAMAR -->
         <div class="mt-5 d-none" id="fasilitasKamarSection">
-            <h2>Fasilitas Kamar kost penting gasihh menurut lo ?</h2>
+            <h2>Seberapa Penting Fasilitas Kamar Dalam memilih Kost?</h2>
             <i>Kasur, TV, dispenser dll</i>
             <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewFasilitasKamar" alt="">
 
@@ -144,7 +144,7 @@
 
         <!-- FASILITAS PENUNJANG -->
         <div class="mt-5 d-none" id="fasilitasPenunjangSection">
-            <h2>Fasilitas Penunjang kost penting gasihh menurut lo ?</h2>
+            <h2>Seberapa Penting Fasilitas Penunjang Dalam memilih Kost?</h2>
             <i>kamar mandi dalam, tempat jemuran, mesin cuci dll</i>
             <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewFasilitasPenunjang" alt="">
 
@@ -157,7 +157,7 @@
 
         <!-- FASILITAS LINGKUNGAN -->
         <div class="mt-5 d-none" id="fasilitasLingkunganSection">
-            <h2>Fasilitas Lingkungan kost penting gasihh menurut lo ?</h2>
+            <h2>Seberapa Penting Fasilitas Lingkungan Dalam memilih Kost?</h2>
             <i>Deket akses publik terminal, kantin dll</i>
             <img width="200" height="200" class="mx-auto d-block" src="{{asset('/emoticon/cukup-penting.png')}}" id="previewFasilitasLingkungan" alt="">
 
