@@ -5,10 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\DssKost;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use App\DssFasilitasKamar;
 use App\DssFasilitasPenunjang;
 use App\DssFasilitasLingkungan;
 use App\DssAdmin;
+
 
 class KostController extends Controller
 {
@@ -122,14 +124,9 @@ class KostController extends Controller
         $file->move($tujuan_upload, $nama_file);
         
         $this->validate($request, [
-            'nama' => 'required',
-            'harga' => 'required',
-            'jarak' => 'required',
-            'luas_kamar' => 'required',
-            'tipe' => 'required',
-            'id_fasilitas_kamar' => 'required',
-            'id_fasilitas_penunjang' => 'required',
-            'id_fasilitas_lingkungan' => 'required'
+            'nama' => 'required|max:25',
+            'harga' => 'required|numeric',
+            'jarak' => 'required|numeric'
         ]);
 
         DB::table('dss_kosts')->insert([
@@ -144,7 +141,7 @@ class KostController extends Controller
             'id_fasilitas_lingkungan' => $request->fasilitas_lingkungan
         ]);
 
-        return redirect('admin/alternatif_kost');
+        return redirect('admin/alternatif_kost')->with('status', 'Data Berhasil Ditambahkan');
     }
 
     /**
@@ -239,7 +236,7 @@ class KostController extends Controller
         File::delete($public_path_file);
         $hapus_kost->delete();
 
-        return redirect('/admin/alternatif_kost');
+        return redirect('/admin/alternatif_kost')->with('status', 'Data Berhasil Dihapus');
     }
 
     /**

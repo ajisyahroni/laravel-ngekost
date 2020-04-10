@@ -9,16 +9,12 @@
       </div>
       <div class="card-body">
         <div class="table-responsive">
-        @if (count($errors) > 0)
-          <div class="alert alert-danger">
-              <ul>
-                  @foreach ($errors->all() as $error)
-                      <li>{{ $error }}</li>
-                  @endforeach
-              </ul>
-          </div>
-          @endif
           <button class="btn btn-sm btn-primary mb-3" data-toggle="modal" data-target="#tambah_alternatif"><i class="fas fa-plus fa-sm"></i>Tambah Alternatif</button>
+          @if (session('status'))
+              <div class="alert alert-success">
+                  {{ session('status') }}
+              </div>
+          @endif
           <table class="table table-bordered" id="table_id" width="100%" cellspacing="0">
             <thead>
               <tr>
@@ -52,7 +48,7 @@
                 <td>{{ $kost->fasilitasLingkungan->nama }}</td>
                 <td>
                   <a href="/admin/alternatif_kost/edit/{{ $kost->id }}" class="btn btn-primary btn-sm"><i class=" fa fa-edit"></i></a>
-                  <a href="/admin/alternatif_kost/hapus/{{ $kost->id }}" class="btn btn-danger btn-sm"><i class=" fa fa-trash"></i></a>
+                  <a href="/admin/alternatif_kost/hapus/{{ $kost->id }}" class="btn btn-danger btn-sm"><i class=" fa fa-trash" onclick="return confirm('Yakin Ingin Menghapus?')"></i></a>
                 </td>
               </tr>
               @endforeach
@@ -79,17 +75,32 @@
           @csrf
           <div class="form-group">
             <label>Nama Alternatif</label>
-            <input type="text" name="nama_kost" class="form-control">
+            <input type="text" name="nama_kost" class="form-control @error('nama') is-invalid @enderror">
+            @error('nama')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
           </div>
 
           <div class="form-group">
             <label>Harga (/Bulan)</label>
-            <input type="text" name="harga_kost" class="form-control">
+            <input type="text" name="harga_kost" class="form-control @error('harga') is-invalid @enderror">
+            @error('harga')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
           </div>
 
           <div class="form-group">
             <label>Jarak ke AMIKOM (m)</label>
-            <input type="text" name="jarak_kost" class="form-control">
+            <input type="text" name="jarak_kost" class="form-control @error('jarak') is-invalid @enderror">
+            @error('jarak')
+            <div class="invalid-feedback">
+                {{ $message }}
+            </div>
+            @enderror
           </div>
 
           <div class="form-group">
