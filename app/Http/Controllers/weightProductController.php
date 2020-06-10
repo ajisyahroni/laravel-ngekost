@@ -15,16 +15,16 @@ class weightProductController extends Controller
     public function fuzzyForDistance($distance)
     {
         $distanceValue = 0;
-        if ($distance < 500) {
-            $distanceValue = 1;
+        if ($distance <= 500) {
+            $distanceValue = 5;
         } else if ($distance > 500 && $distance <= 750) {
-            $distanceValue = 0.75;
+            $distanceValue = 4;
         } else if ($distance > 750 && $distance <= 1000) {
-            $distanceValue = 0.50;
+            $distanceValue = 3;
         } else if ($distance > 1000 && $distance <= 1500) {
-            $distanceValue = 0.25;
+            $distanceValue = 2;
         } else {
-            $distanceValue = 0;
+            $distanceValue = 1;
         }
         return $distanceValue;
     }
@@ -32,16 +32,16 @@ class weightProductController extends Controller
     public function fuzzyForPrice($price)
     {
         $value = 0;
-        if ($price < 250) {
-            $value = 1;
+        if ($price <= 250) {
+            $value = 5;
         } else if ($price > 250 && $price <= 500) {
-            $value = 0.75;
+            $value = 4;
         } else if ($price > 500 && $price <= 750) {
-            $value = 0.50;
+            $value = 3;
         } else if ($price > 750 && $price <= 1000) {
-            $value = 0.25;
+            $value = 2;
         } else {
-            $value = 0;
+            $value = 1;
         }
         return $value;
     }
@@ -54,7 +54,7 @@ class weightProductController extends Controller
             $arrayOfWeight = [
                 intval($req->harga),
                 intval($req->jarak),
-                intval($req->luas_kamar),
+                intval($req->luasKamar),
                 intval($req->fasilitasKamar),
                 intval($req->fasilitasPenunjang),
                 intval($req->fasilitasLingkungan)
@@ -90,10 +90,12 @@ class weightProductController extends Controller
 
         // // ARRAY BOBOT
         // $arrayOfWeight = [5, 5, 4, 3, 2, 5];
+        // passed
         $sumOfWeight = array_sum($arrayOfWeight);
 
 
         // NORMALISASI BOBOT
+        // passed
         $normalizedWeight = [];
         foreach ($arrayOfWeight as $key => $value) {
             $dividedBySum = $value / $sumOfWeight;
@@ -101,12 +103,12 @@ class weightProductController extends Controller
         }
 
         // CALCULATE THE VECTOR OF S VALUE
-
+        // passed
         foreach ($data_kost as $key => $value) {
 
             // COST
-            $harga = -1 * pow($this->fuzzyForPrice($value->harga), $normalizedWeight[0]);
-            $jarak = -1 * pow($this->fuzzyForDistance($value->jarak), $normalizedWeight[1]);
+            $harga =  pow($this->fuzzyForPrice($value->harga), -1 * $normalizedWeight[0]);
+            $jarak =  pow($this->fuzzyForDistance($value->jarak), -1 * $normalizedWeight[1]);
             // BENEFIT
             $luas_kamar = pow($value->luas_kamar, $normalizedWeight[2]);
             $fasilitas_kamar = pow($value->fasilitasKamar->nilai, $normalizedWeight[3]);
@@ -117,12 +119,14 @@ class weightProductController extends Controller
         }
 
         // SIGMA VECTOR
+        // passed
         $sigmaVector = 0;
         foreach ($data_kost as $key => $value) {
             $sigmaVector += $value->vectorS;
         }
 
         // CALCULATE vector value
+        // passed
         foreach ($data_kost as $key => $value) {
             $value['vectorValue'] = $value->vectorS / $sigmaVector;
         }
@@ -132,21 +136,10 @@ class weightProductController extends Controller
         $collection = collect($arrayOfKost);
         $sorted = $collection->sortByDesc('vectorValue')->values()->all();
 
-        // // $collectionOfKost->sortBy('harga');
-        // // var_dump($collectionOfKost);
-
-
-
-        // $res = [
-        //     'status' => 200,
-        //     'bobot normal' => $normalizedWeight,
-        //     'sigma bobot' => $sumOfWeight,
-        //     'sigma vector' => $sigmaVector,
-        //     'data' => $sorted
-        // ];
 
         $runnerUp = collect($sorted)->take(2);
-        $generalKost = collect($sorted)->splice(3);
+        $generalKost = collect($sorted)->splice(2);
+
 
 
         return view('recomendation', [
