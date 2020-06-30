@@ -14,11 +14,11 @@ class fasilitasKamarsTableSeeder extends Seeder
     public function run()
     {
         $fuzzyNumberKamar = [
-            "0" => "kasur",
-            "0.25" => "kasur, lemari",
-            "0.5" => "kasur, lemari, meja belajar",
-            "0.75" => "kasur, lemari, wifi, meja belajar",
-            "1" => "kasur, lemari, wifi, meja belajar, AC"
+            "1" => "kasur",
+            "2" => "kasur, lemari",
+            "3" => "kasur, lemari, meja belajar",
+            "4" => "kasur, lemari, wifi, meja belajar",
+            "5" => "kasur, lemari, wifi, meja belajar, AC"
         ];
         foreach ($fuzzyNumberKamar as $key => $value) {
             DB::table('dss_fasilitas_kamars')->insert([

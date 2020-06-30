@@ -31,7 +31,7 @@
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">Login Admin Ngekost!</h1>
                   </div>
-                  <form class="user" action="/postlogin" method="POST">
+                  <form class="user" action="/loginView" method="POST">
                   {{@csrf_field()}}
                     <div class="form-group">
                       <input name="email" type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">

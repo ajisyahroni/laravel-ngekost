@@ -83,7 +83,7 @@
               <div class="ftco-media-1-inner">
                 <a href="/detail/{{$value['id']}}" class="d-inline-block mb-4"><img src="{{ $value['foto'] }}" alt="FImageo" class="img-fluid"></a>
                 <div class="ftco-media-details">
-                  <h3 class="bg-warning text-white">{{ $value['vectorS']}}</h3>
+                  <h3 class="bg-warning text-white">{{ $value['vectorValue']}}</h3>
                   <h3>{{ $value['nama'] }}</h3>
                   <h4>{{ $value['tipe'] }}</h4>
                   <br>
@@ -103,7 +103,7 @@
               <div class="ftco-media-1-inner">
                 <a href="/detail/{{$value['id']}}" class="d-inline-block mb-4"><img src="{{ $value['foto'] }}" alt="FImageo" class="img-fluid"></a>
                 <div class="ftco-media-details">
-                  <h3 class="bg-warning text-white">{{ $value['vectorS']}}</h3>
+                  <h3 class="bg-warning text-white">{{ $value['vectorValue']}}</h3>
                   <h3>{{ $value['nama'] }}</h3>
                   <h4>{{ $value['tipe'] }}</h4>
                   <br>
