@@ -76,7 +76,15 @@ return [
             'model' => App\User::class,
         ],
 
-        'admin' => [
+        // KODING LAMA NAMA PROVIDER HARUS SAMA YANG DIDEFINISIKAN DIATAS YAITU ADMINS
+        // 'admin' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\DssAdmin::class,
+        // ],
+
+        
+        // KODING AJIK
+        'admins' => [
             'driver' => 'eloquent',
             'model' => App\DssAdmin::class,
         ],

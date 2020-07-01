@@ -15,7 +15,7 @@
 // use Symfony\Component\Routing\Route;
 use ILLuminate\Support\Facades\Route;
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'as'=>'admin.'], function () {
     
     Route::get('/alternatif_kost', 'KostController@showallAlternatif');
     Route::get('/', 'KostController@dashboard');
@@ -26,7 +26,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/alternatif_kost/hapus/{id}', 'KostController@hapus');
 
     Route::get('/profil', 'KostController@profil');
-    Route::get('/login', 'AdminController@loginView');
+    Route::get('/login', 'AdminController@loginView')->name('login.admin.view');
     Route::post('/login-admin', 'AdminController@login')->name('login.admin');
 
 });
