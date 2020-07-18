@@ -255,14 +255,8 @@ class KostController extends Controller
 
     public function profil()
     {
-        // $profil_admin = DssAdmin::all();
-
-        // return view('admin/profil',['admin/profil' => $profil_admin]);
+        
         return view('admin/profil');
     }
 
-    // public function login()
-    // {
-    //     return view('login');
-    // }
 }

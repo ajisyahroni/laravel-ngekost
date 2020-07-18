@@ -51,7 +51,7 @@
                 <li><a href="/allKost" class="nav-link">All Kost</a></li>
                 <li><a href="userinput/" class="nav-link">Rekomendasi WP</a></li>
                 <li><a href="/about" class="nav-link">About</a></li>
-                <li><a href="/login" class="nav-link">Login</a></li>
+                <li><a href="/admin/login" class="nav-link">Login</a></li>
               </ul>
             </nav>
           </div>
@@ -209,7 +209,7 @@
         <div class="row text-center">
           <div class="col-md-12">
             <p class="copyright">
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> NGEKOST WEB | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by Colorlib
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> NGEKOST WEB
             </p>
             </div>
           </div>

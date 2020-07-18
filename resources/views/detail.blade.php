@@ -52,7 +52,7 @@
                 <li><a href="/allKost" class="nav-link">All Kost</a></li>
                 <li><a href="userinput/" class="nav-link">Rekomendasi WP</a></li>
                 <li><a href="/about" class="nav-link">About</a></li>
-                <li><a href="/login" class="nav-link">Login</a></li>
+                <li><a href="/admin/login" class="nav-link">Login</a></li>
               </ul>
             </nav>
           </div>
@@ -97,7 +97,7 @@
               <p>
                 <strong style="color: aqua;">Fasilitas Kamar adalah</strong> {{$detail_kost->fasilitasKamar->nama}},
                 <strong style="color: aqua;">Fasilitas Penunjang adalah</strong> {{$detail_kost->fasilitasPenunjang->nama}},
-                <strong style="color: aqua;">Fasilitas Umum di sekitar kos adalah</strong>{{$detail_kost->fasilitasPenunjang->nama}}
+                <strong style="color: aqua;">Fasilitas Umum di sekitar kos adalah</strong>{{$detail_kost->fasilitasLingkungan->nama}}
               </p>
               <p><a href="/" class="btn btn-primary">Kembali</a></p>
             </div>
@@ -111,7 +111,7 @@
         <div class="row text-center">
           <div class="col-md-12">
             <p class="copyright">
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> NGEKOST WEB | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by Colorlib
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> NGEKOST WEB
             </p>
             </div>
           </div>

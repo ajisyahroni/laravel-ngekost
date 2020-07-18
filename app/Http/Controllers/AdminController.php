@@ -26,19 +26,23 @@ class AdminController extends Controller
     }
 
     public function loginView(Request $request){
-        return view('login');
+        return view('admin/login');
     }
     
-
     public function login(Request $request){
 
     $credentials = $request->only('email', 'password');
     if (Auth::guard('admin')->attempt($credentials)){
-        // return redirect()->route('dashboard.admin.view');
-        return 'silahkan di redirect pada halaman dashboard admin';
+        return redirect()->route('admin.dashboard.view');
     }else{
         return redirect()->back()->withErrors(['cek kembali email dan password']);
     }
+
+    }
+    
+    public function logout(){
+        Auth::logout();
+        return redirect('/admin/login');
     }
 
     

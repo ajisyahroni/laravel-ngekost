@@ -53,7 +53,7 @@
                 <li><a href="/allKost" class="nav-link">All Kost</a></li>
                 <li><a href="/rekomend" class="nav-link">Rekomendasi WP</a></li>
                 <li><a href="/about" class="nav-link">About</a></li>
-                <li><a href="/login" class="nav-link">Login</a></li>
+                <li><a href="/admin/login" class="nav-link">Login</a></li>
               </ul>
             </nav>
           </div>
